@@ -9,11 +9,13 @@ terraform {
 
 provider "aws" {
   region     = "us-east-1"
-  access_key = "var.aws_access_key"
-  secret_key = "var.aws_secert_key"
+  access_key = var.aws_access_key
+  secret_key = var.aws_secert_key
 }
- variable "aws_access_key" {}
- variable "aws_secert_key" {}
+
+variable "aws_access_key"{}
+variable "aws_secert_key"{}
+
 
 resource "aws_vpc" "suhel_vpc" {
   cidr_block = "10.0.0.0/16"
@@ -113,4 +115,3 @@ resource "aws_instance" "Test_server" {
   }
 
   }
-
